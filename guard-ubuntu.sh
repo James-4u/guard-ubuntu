@@ -21,11 +21,11 @@ set -euo pipefail
 # IMPORTANT:
 # - Keep your current SSH session open.
 # - After script finishes, test in a NEW terminal:
-#     ssh -p 2218 root@SERVER_IP
+#     ssh -p 2222 root@SERVER_IP
 # ============================================================
 
-SSH_PORT="2218"
 SSH_PUBLIC_KEY="${1:-}"
+SSH_PORT="${2:-2222}"
 
 # Optional web ports (set to "no" if not needed)
 ALLOW_HTTP="yes"
@@ -87,7 +87,7 @@ EOF
   sysctl --system
 }
 
-configure_sshd_force_only_2218() {
+configure_sshd_force_only_2222() {
   log "Configuring SSH: ONLY port ${SSH_PORT}, keys-only, root key login allowed"
   cp /etc/ssh/sshd_config "/etc/ssh/sshd_config.bak.$(date +%s)"
 
@@ -256,7 +256,7 @@ main() {
   install_packages
   kernel_hardening
 
-  configure_sshd_force_only_2218
+  configure_sshd_force_only_2222
   restart_ssh_service
 
   setup_ufw
