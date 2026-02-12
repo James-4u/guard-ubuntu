@@ -4,7 +4,7 @@ set -euo pipefail
 # ====== CONFIG ======
 KEY_NAME="github_deploy"
 GITHUB_HOST="github.com"
-EMAIL_TAG="$(hostname)-$(whoami)"
+EMAIL_TAG="smart.jamesjin@gmail.com"
 SSH_DIR="$HOME/.ssh"
 KEY_PATH="$SSH_DIR/$KEY_NAME"
 CONFIG_PATH="$SSH_DIR/config"
