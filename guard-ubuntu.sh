@@ -87,6 +87,18 @@ EOF
   sysctl --system
 }
 
+enable_ufw_final() {
+
+  log "Enabling UFW firewall"
+
+  ufw --force enable
+
+  systemctl enable ufw
+  systemctl restart ufw
+
+  ufw status verbose
+}
+
 configure_sshd_force_only_2222() {
   log "Configuring SSH: ONLY port ${SSH_PORT}, keys-only, root key login allowed"
   cp /etc/ssh/sshd_config "/etc/ssh/sshd_config.bak.$(date +%s)"
@@ -265,6 +277,7 @@ main() {
   install_crowdsec
 
   verify_listening_ports
+  enable_ufw_final  
   final_message
 }
 
