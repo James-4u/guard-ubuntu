@@ -7,3 +7,12 @@ sudo ufw deny from 85.93.9.234
 sudo ufw deny from 85.93.9.236
 sudo ufw deny from 89.144.8.81
 sudo ufw deny from 89.144.8.91
+sudo ufw deny from 109.120.176.120
+sudo ufw deny from 109.120.177.153
+sudo ufw deny from 109.120.176.122
+sudo ufw deny from 138.124.50.67
+sudo ufw deny from 109.120.177.242
+sudo ufw deny from 109.172.94.15
+sudo ufw deny from 138.124.50.59
+sudo ufw deny from 109.120.138.25
+sudo ufw deny from 138.124.50.66
