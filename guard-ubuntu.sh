@@ -272,7 +272,7 @@ main() {
   restart_ssh_service
 
   setup_ufw
-  setup_fail2ban
+  #setup_fail2ban
   setup_nft_rate_limit_ssh
   install_crowdsec
 
