@@ -40,6 +40,18 @@ python3 --version
 
 
 echo "========================================"
+echo "Installing uv..."
+echo "========================================"
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Load uv into current shell session
+export PATH="$HOME/.local/bin:$PATH"
+
+uv --version
+
+
+echo "========================================"
 echo "Installing NVM..."
 echo "========================================"
 
